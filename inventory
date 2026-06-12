@@ -1,3 +1,8 @@
+[web_servers]
 ubuntu@10.12.204.200
+
+[db_servers]
 ubuntu@10.12.204.235
+
+[file_servers]
 ubuntu@10.12.204.138
