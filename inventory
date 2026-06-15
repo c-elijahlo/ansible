@@ -6,3 +6,6 @@ ubuntu@10.12.204.235
 
 [file_servers]
 ubuntu@10.12.204.138
+
+[workstations]
+captain-levi@10.12.204.216
