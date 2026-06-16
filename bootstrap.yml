@@ -1,0 +1,48 @@
+---
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: install updates (Ubuntu)
+    tags: always
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+- hosts: all
+  become: true
+  tasks:
+
+
+
+
+  - name: create sabo user
+    tags: alsways
+    user:
+      name: sabo
+      groups: root
+
+  - name: add ssh key for sabo
+    tags: always
+    authorized_key:
+      user: sabo
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKldYezfyN9QUK3MNs6RJwUh8rS0fwqzgxiFXK1f5JKt ansible"
+
+
+  - name: add sudoers file for sabo
+    tags: always
+    copy:
+      src: sudoer_sabo
+      dest: /etc/sudoers.d/sabo
+      owner: root
+      group: root
+      mode: 0440
+
+
+
+
+
+
+
+
