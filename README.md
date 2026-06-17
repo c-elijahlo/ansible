@@ -80,5 +80,5 @@ ansible-playbook --ask-become-pass remove_apache.yml
 bootstrap.yml = for sudoer creation
 roles_site.yml = the way that the roles work in all the vms
 
-
+Everything from servers vms and containers is managed through Incus GUI 
 
